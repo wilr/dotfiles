@@ -1,0 +1,14 @@
+--follow
+--color
+--group
+
+--type-set=coffee=.coffee,.jst
+--type-add=css=.sass,.scss
+--type-set=markdown=.markdown,.md,.mdown
+--type-add=js=.js.erb,.json
+--type-add=ruby=.haml,.rake,.rsel,.builder
+--type-set=cucumber=.feature
+--type-set=silverstripe=.ss
+--type-add=php=.ini,.inc
+--type-set=drupal=.module,.test
+--type-set=handlebars=.handlebars,.hbs
