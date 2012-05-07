@@ -69,3 +69,14 @@ function codepoint() {
 	perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))"
 	echo # newline
 }
+
+# helper for updating port files
+function updateports() {
+	sudo port selfupdate
+	sudo port sync
+	sudo port upgrade installed
+	sudo port outdated
+	sudo port upgrade outdated
+	sudo port -v uninstall inactive
+}
+sudo port clean --all installed
