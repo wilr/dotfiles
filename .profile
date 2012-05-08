@@ -9,3 +9,4 @@ alias mysqladmin='/opt/local/bin/mysqladmin5'
 alias mysql='/opt/local/bin/mysql5'
 
 [[ $- == *i* ]]   &&   . "$HOME/Scripts/git-prompt/git-prompt.sh"
+
