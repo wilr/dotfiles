@@ -78,5 +78,5 @@ function updateports() {
 	sudo port outdated
 	sudo port upgrade outdated
 	sudo port -v uninstall inactive
+	sudo port clean --all installed
 }
-sudo port clean --all installed
