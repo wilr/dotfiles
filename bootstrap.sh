@@ -1,9 +1,14 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 git pull
+
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~
+	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude ".subl" -av . ~
+
+	# sync the sublime packages
+	rsync --exclude ".DS_Store" -av ".subl/" "$HOME/Library/Application Support/Sublime Text 2/Packages/User"
 }
+
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt
 else
@@ -13,5 +18,6 @@ else
 		doIt
 	fi
 fi
+
 unset doIt
 source ~/.bash_profile
