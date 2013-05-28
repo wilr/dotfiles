@@ -2,4 +2,5 @@
 	"font_size": 13.0,
 	"spell_check": true,
 	"theme": "Soda Light.sublime-theme"
+	"rulers": [80, 120],
 }
