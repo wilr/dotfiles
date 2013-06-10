@@ -3,7 +3,7 @@
 command=$1;
 
 if [ "$command" == "" ]; then
-	echo "Usage: ./bootstrap [link|changes|subl]"
+	echo "Usage: ./bootstrap [link|changes|sublime]"
 	exit 1
 fi
 
@@ -53,8 +53,16 @@ case $command in
 			fi
 		done
 		;;
-	subl)
-		rsync --exclude ".DS_Store" -av ".subl/" "$HOME/Library/Application Support/Sublime Text 2/Packages/User"
-		
+	sublime)
+		# configure sublime 3
+		if [ -d "$HOME/Library/Application Support/Sublime Text 3/Packages" ]; then
+			rsync --exclude ".DS_Store" -av "sublime/" "$HOME/Library/Application Support/Sublime Text 3/Packages"
+		fi
+
+		# configure sublime 2
+		if [ -d "$HOME/Library/Application Support/Sublime Text 2/Packages" ]; then 
+			rsync --exclude ".DS_Store" -av "sublime/" "$HOME/Library/Application Support/Sublime Text 2/Packages"
+		fi
+			
 		;;
 esac
