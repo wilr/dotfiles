@@ -5,6 +5,9 @@ for file in ~/.{extra,exports,aliases,functions,profile,private}; do
 done
 unset file
 
+# load rvm
+source ~/.rvm/scripts/rvm
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
