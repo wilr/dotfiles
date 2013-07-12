@@ -1,14 +1,8 @@
-# MacPorts Installer addition on 2012-04-02_at_12:31:28: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
-alias mysqlstart='sudo /opt/local/bin/mysqld_safe5 &'
-alias mysqlstop='/opt/local/bin/mysqladmin5 -u root -p shutdown'
-alias mysqladmin='/opt/local/bin/mysqladmin5'
-alias mysql='/opt/local/bin/mysql5'
-alias pgstart="sudo su postgres -c '/opt/local/lib/postgresql91/bin/postgres -D /opt/local/var/db/postgresql91/defaultdb'"
-alias pgstop="sudo su postgres -c '/opt/local/lib/postgresql91/bin/pg_ctl stop -D /opt/local/var/db/postgresql91/defaultdb'"
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+alias mysqlstart='sudo /usr/local/bin/mysqld -u root &'
+alias mysqlstop='sudo /usr/local/bin/mysqladmin5 -u root -p shutdown'
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l logfile start'"
+alias pgstop="pg_ctl -D /usr/local/var/postgres -l logfile stop'"
 
 [[ $- == *i* ]]   &&   . "$HOME/Scripts/git-prompt/git-prompt.sh"
 
