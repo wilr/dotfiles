@@ -10,7 +10,8 @@ fi
 case $command in
 	link)
 		cd "$(dirname "$0")"
-		git pull
+		git fetch origin
+		git reset --hard origin/master
 
 		function doIt() {
 			rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude ".subl" -av . ~
