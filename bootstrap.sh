@@ -66,4 +66,6 @@ case $command in
 		# fi
 			
 		;;
+	*)
+		echo "Unknown command $command provided."
 esac
