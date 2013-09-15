@@ -61,9 +61,9 @@ case $command in
 		fi
 
 		# configure sublime 2
-		if [ -d "$HOME/Library/Application Support/Sublime Text 2/Packages" ]; then 
-			rsync --exclude ".DS_Store" -av "sublime/" "$HOME/Library/Application Support/Sublime Text 2/Packages"
-		fi
+		# if [ -d "$HOME/Library/Application Support/Sublime Text 2/Packages" ]; then 
+		#		rsync --exclude ".DS_Store" -av "sublime/" "$HOME/Library/Application Support/Sublime Text 2/Packages"
+		# fi
 			
 		;;
 esac
