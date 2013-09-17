@@ -14,7 +14,7 @@ case $command in
 		git reset --hard origin/master
 
 		function doIt() {
-			rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude ".subl" -av . ~
+			rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude "sublime" -av . ~
 		}
 
 		if [ "$1" == "--force" -o "$1" == "-f" ]; then
