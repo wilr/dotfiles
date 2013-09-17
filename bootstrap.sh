@@ -10,14 +10,12 @@ fi
 case $command in
 	link)
 		cd "$(dirname "$0")"
-		git fetch origin
-		git reset --hard origin/master
 
 		function doIt() {
 			rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude "sublime" -av . ~
 		}
 
-		if [ "$1" == "--force" -o "$1" == "-f" ]; then
+		if [ "$2" == "--force" -o "$2" == "-f" ]; then
 			doIt
 		else
 			read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
