@@ -2,5 +2,6 @@
 	"font_size": 13.0,
 	"spell_check": true,
 	"theme": "Soda Light.sublime-theme",
-	"rulers": [80, 120]
+	"rulers": [80, 120],
+	"css_files": [".css", ".sass", ".less", ".scss", ".less.erb", ".scss.erb", ".sass.erb"]
 }
