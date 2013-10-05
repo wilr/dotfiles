@@ -7,12 +7,18 @@ if [ "$command" == "" ]; then
 	exit 1
 fi
 
+if [ "$2" == "--force" -o "$2" == "-f" ]; then
+	rsyncflags="-q"
+else
+	rsyncflags="-v"
+fi
+
 case $command in
 	link)
 		cd "$(dirname "$0")"
 
 		function doIt() {
-			rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude "sublime" -av . ~
+			rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude "sublime" -a $rsyncflags . ~
 		}
 
 		if [ "$2" == "--force" -o "$2" == "-f" ]; then
@@ -58,11 +64,11 @@ case $command in
 		user="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
 		if [ -d "$packages" ]; then
-			rsync --exclude ".DS_Store" -av "sublime/Installed Packages/" "$packages"
+			rsync --exclude ".DS_Store" $rsyncflags -a "sublime/Installed Packages/" "$packages"
 		fi
 
 		if [ -d "$user" ]; then
-			rsync --exclude ".DS_Store" -av "sublime/Packages/User/" "$user"
+			rsync --exclude ".DS_Store" $rsyncflags -a "sublime/Packages/User/" "$user"
 		fi
 
 		# configure sublime 2
