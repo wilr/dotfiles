@@ -1,4 +1,4 @@
-export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:~/.composer/vendor/bin/:$PATH"
 alias mysqlstart='sudo /usr/local/bin/mysqld -u root &'
 alias mysqlstop='sudo /usr/local/bin/mysqladmin5 -u root -p shutdown'
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l logfile start"
