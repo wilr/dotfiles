@@ -1,9 +1,0 @@
-
-<snippet>
-	<content><![CDATA[
-/* ------------------------------------------------------ ${1} */
-]]></content>
-	<tabTrigger>cm</tabTrigger>
-	<scope>source.css</scope>
-	<description>css line comment</description>
-</snippet>
